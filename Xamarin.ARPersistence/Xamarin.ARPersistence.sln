@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin.ARPersistence", "Xamarin.ARPersistence\Xamarin.ARPersistence.csproj", "{31834411-4FDE-444D-809B-9F0B589C35EA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Release|iPhone = Release|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{31834411-4FDE-444D-809B-9F0B589C35EA}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{31834411-4FDE-444D-809B-9F0B589C35EA}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{31834411-4FDE-444D-809B-9F0B589C35EA}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{31834411-4FDE-444D-809B-9F0B589C35EA}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{31834411-4FDE-444D-809B-9F0B589C35EA}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{31834411-4FDE-444D-809B-9F0B589C35EA}.Debug|iPhone.Build.0 = Debug|iPhone
+		{31834411-4FDE-444D-809B-9F0B589C35EA}.Release|iPhone.ActiveCfg = Release|iPhone
+		{31834411-4FDE-444D-809B-9F0B589C35EA}.Release|iPhone.Build.0 = Release|iPhone
+	EndGlobalSection
+EndGlobal
