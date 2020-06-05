@@ -50,7 +50,7 @@ namespace ARPersistence
                 Environment.NewLine +
                 $"Tracking: {camera.TrackingState}";
 
-            //UpdateSessionInfoLabel(frame, frame.Camera.TrackingState, frame.Camera.TrackingStateReason);
+            UpdateSessionInfoLabel(frame, camera.TrackingState, camera.TrackingStateReason);
         }
 
         [Export("session:cameraDidChangeTrackingState:")]
@@ -63,7 +63,7 @@ namespace ARPersistence
         {
             string message = "";
 
-            //_snapShotThumbnail.Hidden = true;
+            _snapShotThumbnail.Hidden = true;
 
             switch (trackingState)
             {

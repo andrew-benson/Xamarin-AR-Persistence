@@ -162,13 +162,11 @@ namespace ARPersistence
                 }
 
                 // Remove the snapshot anchor from the world map since we do not need it in the scene.
-                worldMap.Anchors.ToList().RemoveAll(anchor => anchor is SnapshotAnchor);
+                worldMap.Anchors = worldMap.Anchors.Where(anchor => anchor.GetType() != typeof(SnapshotAnchor)).ToArray();
 
                 var configuration = new ARWorldTrackingConfiguration
                 {
                     PlaneDetection = ARPlaneDetection.Horizontal,
-
-                    //LightEstimationEnabled = true,
                     EnvironmentTexturing = AREnvironmentTexturing.Automatic,
                     InitialWorldMap = worldMap,
                 };
@@ -248,8 +246,6 @@ namespace ARPersistence
 
         partial void HandleSceneTap(UITapGestureRecognizer sender)
         {
-            Debug.WriteLine("tapped");
-
             // Disable placing objects when the session is still relocalizing
             if (isRelocalizingMap && objAnchor == null)
                 return;
