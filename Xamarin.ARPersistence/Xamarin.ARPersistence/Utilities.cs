@@ -14,6 +14,39 @@ namespace ARPersistence.Utilities
         }
     }
 
+    public static class ARCameraUtility
+    {
+        public static string GetLocalisedFeedback(this ARCamera camera)
+        {
+            if(camera == null)
+                return "Initializing AR session.";
+
+            switch (camera.TrackingState)
+            {
+                case ARTrackingState.Normal:
+                    return "Move around to map the environment.";
+                case ARTrackingState.NotAvailable:
+                    return "Tracking unavailable.";
+                case ARTrackingState.Limited:
+                    switch (camera.TrackingStateReason)
+                    {
+                        case ARTrackingStateReason.ExcessiveMotion:
+                            return "Move the device more slowly.";
+                        case ARTrackingStateReason.InsufficientFeatures:
+                            return "Point the device at an area with visible surface detail, or improve lighting conditions.";
+                        case ARTrackingStateReason.Relocalizing:
+                            return "Resuming session — move to where you were when the session was interrupted.";
+                        case ARTrackingStateReason.Initializing:
+                            return "Initializing AR session.";
+                        default:
+                            return string.Empty;
+                    }
+                default:
+                    return string.Empty;
+            }
+        }
+    }
+
     public static class ARWorldMapUtility
     {
         public static SnapshotAnchor GetSnapshotAnchor(this ARWorldMap worldMap)

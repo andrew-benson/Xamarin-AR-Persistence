@@ -49,7 +49,7 @@ namespace ARPersistence
 
         public SnapshotAnchor(NSData imageData, NMatrix4 transform) : base("snapshot", transform)
         {
-            this.ImageData = imageData;            
+            this.ImageData = imageData;
         }
 
         [Export("initWithCoder:")]

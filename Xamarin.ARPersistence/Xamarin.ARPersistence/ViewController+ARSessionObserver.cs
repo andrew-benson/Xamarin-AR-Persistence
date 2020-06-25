@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using ARKit;
+using ARPersistence.Utilities;
 using CoreFoundation;
 using Foundation;
 using SceneKit;
@@ -102,7 +103,7 @@ namespace ARPersistence
                     }
                     break;
                 default:
-                    message = trackingState.ToString();
+                    message = currentFrame.Camera.GetLocalisedFeedback();
                     break;
             }
 

@@ -106,12 +106,8 @@ namespace ARPersistence
 
             _sceneView.Delegate = this;
 
-            _sceneView.Session = new ARSession();
-
             _sceneView.Session.Delegate = this;
                                 
-            _sceneView.Scene = SCNScene.Create();
-
             _sceneView.DebugOptions = ARSCNDebugOptions.ShowFeaturePoints;
 
             _sceneView.Session.Run(DefaultConfiguration, ARSessionRunOptions.ResetTracking | ARSessionRunOptions.RemoveExistingAnchors);    // Run the view's session
@@ -200,9 +196,7 @@ namespace ARPersistence
                         var imageView = UIImage.LoadFromData(snapshotAnchor.ImageData);
                         _snapShotThumbnail.Hidden = false;
                         _snapShotThumbnail.Image = imageView;
-                        var anchList = worldMap.Anchors.ToList();
-                        anchList.Add(snapshotAnchor);
-                        worldMap.Anchors = anchList.ToArray();
+                        worldMap.Anchors = worldMap.Anchors.Append(snapshotAnchor).ToArray();
                         Debug.WriteLine("Screenshot saved");
                     }
                     else
